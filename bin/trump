@@ -4,20 +4,17 @@
 
 $files = array(
   __DIR__ . '/../vendor/autoload.php',
+  __DIR__ . '/../../../autoload.php',
 );
 foreach ($files as $file) {
     if (file_exists($file)) {
         require $file;
-
         define('TRUMP_COMPOSER_INSTALL', $file);
-
         break;
     }
 }
-
-
 $trump = new \Trump\TrumpTaskManager;
-$trump->setTrumpFile(__DIR__ . '/../Trumpfile');
+$trump->setTrumpFile((TRUMP_COMPOSER_INSTALL == '/../vendor/autoload.php') ? __DIR__ . '/../Trumpfile' : __DIR__ . '/../../../../Trumpfile');
 
 $trampFile = $trump->getTrumpFile();
 $task = isset($argv[1]) ? $argv[1] : 'default';
