@@ -2,6 +2,6 @@ makers:
    php: \Trump\Maker\PhpMaker
    shell: \Trump\Maker\ShellMaker
 default:
-   php: echo 'Hello';
+   php: echo 'Hello from Trump!!!';
 test:
    shell: vendor/bin/phpunit
