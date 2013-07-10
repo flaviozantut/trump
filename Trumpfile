@@ -1,0 +1,7 @@
+makers:
+   php: \Trump\Maker\PhpMaker
+   shell: \Trump\Maker\ShellMaker
+default:
+   php: echo 'Hello';
+test:
+   shell: vendor/bin/phpunit

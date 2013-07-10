@@ -1,0 +1,13 @@
+makers:
+   php: \Trump\Maker\PhpMaker
+   shell: \Trump\Maker\ShellMaker
+default:
+   php: echo '1';
+# task2:
+#    - tasks: [default, b]
+#    - php: echo 'teste'
+# test:
+#    - shell: phpunit
+# watch:
+#    - tasks: [default]
+#    - files: ['app/assets/css', app/assets/js]
