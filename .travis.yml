@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 5.4
+
+before_script:
+  - composer self-update
+  - composer update --prefer-source --dev
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
+  - ./vendor/bin/phpcs --standard=PSR2 ./app/
+
+after_script:
+  - php vendor/bin/coveralls -v
